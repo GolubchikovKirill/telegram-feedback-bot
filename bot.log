@@ -1,0 +1,188 @@
+2024-11-10 22:53:35,683 - __main__ - INFO - Запуск бота
+2024-11-10 22:53:35,683 - aiogram.dispatcher - INFO - Start polling
+2024-11-10 22:53:37,902 - aiogram.dispatcher - INFO - Run polling for bot @feedback_studentsBOT id=7797435867 - "Students' feedback bot"
+2024-11-10 22:53:55,901 - aiogram.event - INFO - Update id=191673853 is not handled. Duration 1 ms by bot id=7797435867
+2024-11-10 22:53:55,901 - aiogram.event - ERROR - Cause exception while process update id=191673853 by bot id=7797435867
+ValidationError: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+Traceback (most recent call last):
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/handlers/start_handler.py", line 10, in start_command
+    reply_markup=feedback_keyboard()
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/keyboards/feedback_keyboard.py", line 4, in feedback_keyboard
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/pydantic/main.py", line 212, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2024-11-10 22:54:21,575 - __main__ - INFO - Запуск бота
+2024-11-10 22:54:21,575 - aiogram.dispatcher - INFO - Start polling
+2024-11-10 22:54:23,465 - aiogram.dispatcher - INFO - Run polling for bot @feedback_studentsBOT id=7797435867 - "Students' feedback bot"
+2024-11-10 22:54:31,781 - aiogram.event - INFO - Update id=191673854 is not handled. Duration 0 ms by bot id=7797435867
+2024-11-10 22:54:31,782 - aiogram.event - ERROR - Cause exception while process update id=191673854 by bot id=7797435867
+ValidationError: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+Traceback (most recent call last):
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/handlers/start_handler.py", line 10, in start_command
+    reply_markup=feedback_keyboard()
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/keyboards/feedback_keyboard.py", line 4, in feedback_keyboard
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+  File "/Users/golubcikovkirill/Desktop/feedback_bot/venv/lib/python3.13/site-packages/pydantic/main.py", line 212, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2024-11-10 22:55:22,091 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2024-11-10 22:55:22,092 - aiogram.dispatcher - INFO - Polling stopped for bot @feedback_studentsBOT id=7797435867 - "Students' feedback bot"
+2024-11-10 22:55:22,092 - aiogram.dispatcher - INFO - Polling stopped
+2024-11-10 22:55:28,479 - __main__ - INFO - Запуск бота
+2024-11-10 22:55:28,480 - aiogram.dispatcher - INFO - Start polling
+2024-11-10 22:55:29,928 - aiogram.dispatcher - INFO - Run polling for bot @feedback_studentsBOT id=7797435867 - "Students' feedback bot"
+2024-11-10 22:55:50,105 - aiogram.event - INFO - Update id=191673855 is handled. Duration 1133 ms by bot id=7797435867
+2024-11-10 22:55:53,885 - aiogram.event - INFO - Update id=191673856 is handled. Duration 366 ms by bot id=7797435867
+2024-11-10 22:56:00,736 - aiogram.event - INFO - Update id=191673857 is handled. Duration 729 ms by bot id=7797435867
+2024-11-10 22:56:08,682 - aiogram.event - INFO - Update id=191673858 is handled. Duration 1021 ms by bot id=7797435867
+2024-11-10 22:56:13,131 - aiogram.event - INFO - Update id=191673859 is handled. Duration 1323 ms by bot id=7797435867
+2024-11-10 22:58:10,654 - aiogram.event - INFO - Update id=191673860 is handled. Duration 1098 ms by bot id=7797435867
+2024-11-10 22:58:14,776 - aiogram.event - INFO - Update id=191673861 is handled. Duration 509 ms by bot id=7797435867
+2024-11-10 22:58:17,440 - aiogram.event - INFO - Update id=191673862 is handled. Duration 581 ms by bot id=7797435867
+2024-11-10 22:58:22,765 - aiogram.event - INFO - Update id=191673863 is handled. Duration 923 ms by bot id=7797435867
+2024-11-10 22:58:29,731 - aiogram.event - INFO - Update id=191673864 is not handled. Duration 2 ms by bot id=7797435867
+2024-11-10 22:59:53,286 - aiogram.event - INFO - Update id=191673865 is handled. Duration 603 ms by bot id=7797435867
+2024-11-10 22:59:58,452 - aiogram.event - INFO - Update id=191673866 is handled. Duration 276 ms by bot id=7797435867
+2024-11-10 23:00:00,529 - aiogram.event - INFO - Update id=191673867 is handled. Duration 179 ms by bot id=7797435867
+2024-11-10 23:00:06,134 - aiogram.event - INFO - Update id=191673868 is handled. Duration 251 ms by bot id=7797435867
+2024-11-10 23:00:17,148 - aiogram.event - INFO - Update id=191673869 is not handled. Duration 1 ms by bot id=7797435867
+2024-11-10 23:01:28,962 - aiogram.event - INFO - Update id=191673870 is handled. Duration 339 ms by bot id=7797435867
+2024-11-10 23:01:31,695 - aiogram.event - INFO - Update id=191673871 is handled. Duration 454 ms by bot id=7797435867
+2024-11-10 23:01:34,166 - aiogram.event - INFO - Update id=191673872 is handled. Duration 118 ms by bot id=7797435867
+2024-11-10 23:01:42,149 - aiogram.event - INFO - Update id=191673873 is handled. Duration 226 ms by bot id=7797435867
+2024-11-10 23:10:55,974 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2024-11-10 23:10:55,975 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7797435867)
+2024-11-10 23:11:56,981 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2024-11-10 23:11:56,983 - aiogram.dispatcher - WARNING - Sleep for 1.264999 seconds and try again... (tryings = 1, bot id = 7797435867)
+2024-11-10 23:12:14,353 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 7797435867)

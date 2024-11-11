@@ -186,3 +186,7 @@ keyboard
 2024-11-10 23:11:56,981 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
 2024-11-10 23:11:56,983 - aiogram.dispatcher - WARNING - Sleep for 1.264999 seconds and try again... (tryings = 1, bot id = 7797435867)
 2024-11-10 23:12:14,353 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 7797435867)
+2024-11-10 23:59:55,243 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-11-10 23:59:55,246 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7797435867)
+2024-11-11 00:00:06,476 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7797435867)
+2024-11-11 00:21:34,274 - aiogram.event - INFO - Update id=191673874 is handled. Duration 347 ms by bot id=7797435867

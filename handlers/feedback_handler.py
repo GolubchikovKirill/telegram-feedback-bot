@@ -3,9 +3,13 @@ from aiogram.fsm.context import FSMContext
 from services.database import Database
 from services.state import FeedbackStates
 from config import Config
+import logging
 
 router = Router()
-db = Database()
+db = Database()  # Подключение к базе данных
+
+# Логирование
+logger = logging.getLogger(__name__)
 
 @router.message(F.text == "Что понравилось")
 async def feedback_like(message: types.Message, state: FSMContext):
@@ -20,17 +24,27 @@ async def feedback_suggestion(message: types.Message, state: FSMContext):
 @router.message(FeedbackStates.waiting_for_like_feedback)
 async def handle_like_feedback(message: types.Message, state: FSMContext):
     text = message.text
-    db.add_feedback("Понравилось", text)
-    await message.answer("Благодарим за обратную связь!")
-    await state.clear()
-    admin_message = f"Новый отзыв 'Понравилось': {text}"
-    await message.bot.send_message(Config.ADMIN_ID, admin_message)
+    try:
+        db.add_feedback("Понравилось", text)  # Сохраняем отзыв в базе данных
+        await message.answer("Благодарим за обратную связь!")
+        admin_message = f"Новый отзыв 'Понравилось': {text}"
+        await message.bot.send_message(Config.ADMIN_ID, admin_message)
+    except Exception as e:
+        logger.error(f"Ошибка при сохранении отзыва: {e}")
+        await message.answer("Произошла ошибка при сохранении вашего отзыва. Попробуйте позже.")
+    finally:
+        await state.clear()
 
 @router.message(FeedbackStates.waiting_for_suggestion_feedback)
 async def handle_suggestion_feedback(message: types.Message, state: FSMContext):
     text = message.text
-    db.add_feedback("Добавить", text)
-    await message.answer("Благодарим за обратную связь!")
-    await state.clear()
-    admin_message = f"Новый отзыв 'Добавить': {text}"
-    await message.bot.send_message(Config.ADMIN_ID, admin_message)
+    try:
+        db.add_feedback("Добавить", text)  # Сохраняем отзыв в базе данных
+        await message.answer("Благодарим!")
+        admin_message = f"Новый отзыв 'Добавить': {text}"
+        await message.bot.send_message(Config.ADMIN_ID, admin_message)
+    except Exception as e:
+        logger.error(f"Ошибка при сохранении отзыва: {e}")
+        await message.answer("Произошла ошибка при сохранении вашего отзыва. Попробуйте позже.")
+    finally:
+        await state.clear()

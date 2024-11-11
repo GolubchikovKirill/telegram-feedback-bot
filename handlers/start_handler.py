@@ -6,7 +6,7 @@ router = Router()
 @router.message(F.text == "/start")
 async def start_command(message: types.Message):
     await message.answer(
-        "Привет! Я бот для сбора обратной связи. Выберите один из вариантов:",
+        "Уважаемые студенты! Я бот для получения и обработки обратной связи. Выберите один из вариантов на панели:",
         reply_markup=feedback_keyboard()
     )
 

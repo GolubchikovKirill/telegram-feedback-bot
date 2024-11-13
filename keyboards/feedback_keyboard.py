@@ -1,10 +1,11 @@
+#feedback_keyboard.py
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 def feedback_keyboard():
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton(text="Что понравилось")],
-            [KeyboardButton(text="Что можно добавить")]
+            [KeyboardButton(text="Что понравилось 👍")],
+            [KeyboardButton(text="Что можно добавить 📝")]
         ],
         resize_keyboard=True
     )

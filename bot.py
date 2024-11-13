@@ -1,3 +1,4 @@
+# bot.py
 import logging
 import atexit
 from aiogram import Bot, Dispatcher

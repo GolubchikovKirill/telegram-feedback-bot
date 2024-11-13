@@ -12,12 +12,12 @@ db = Database()  # Подключение к базе данных
 # Логирование
 logger = logging.getLogger(__name__)
 
-@router.message(F.text == "Что понравилось")
+@router.message(F.text == "Что понравилось 👍")
 async def feedback_like(message: types.Message, state: FSMContext):
     await message.answer("Напишите, что вам понравилось:")
     await state.set_state(FeedbackStates.waiting_for_like_feedback)
 
-@router.message(F.text == "Что можно добавить")
+@router.message(F.text == "Что можно добавить 📝")
 async def feedback_suggestion(message: types.Message, state: FSMContext):
     await message.answer("Напишите, что можно добавить:")
     await state.set_state(FeedbackStates.waiting_for_suggestion_feedback)
